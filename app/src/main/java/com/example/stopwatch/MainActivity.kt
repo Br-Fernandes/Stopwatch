@@ -1,5 +1,6 @@
 package com.example.stopwatch
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -16,53 +17,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        startButton()
 
         val chronometer = findViewById<Chronometer>(R.id.chronometer)
-        val startBtn = findViewById<Button>(R.id.btn_start)
-        startBtn?.setOnClickListener(object : View.OnClickListener {
+        val btnStart = findViewById<Button>(R.id.btn_start)
+        val btnRestore = findViewById<Button>(R.id.btn_restore)
+        val btnResume = findViewById<Button>(R.id.btn_resume)
+        btnStart.setOnClickListener {
+            if (btnStart.text == "Start") startChronometer(chronometer, btnStart)
+            else stopChronometer(chronometer, btnStart)
+        }
 
-            var isWorking = false
+        btnRestore.setOnClickListener{
+            chronometer.base = SystemClock.elapsedRealtime()
+            chronometer.stop()
+        }
 
-            override fun onClick(v: View) {
-                if (!isWorking) {
-                    chronometer.start()
-                    isWorking = true
-                } else {
-                    chronometer.stop()
-                    isWorking = false
-                }
-
-                startBtn.setText(if (isWorking) R.string.start else R.string.stop)
-
-                Toast.makeText(this@MainActivity, getString(
-                    if (isWorking)
-                        R.string.working
-                    else
-                        R.string.stopped),
-                    Toast.LENGTH_SHORT).show()
-            }
-        })
-
+        btnResume.setOnClickListener{
+            chronometer.start()
+        }
 
     }
 
-    /*fun startStopwatch() {
-        var stopwatch = findViewById<TextView>(R.id.tv_numbers).text
-        var stopwatchNumbers = stopwatch.split(":")
+    fun startChronometer(chronometer: Chronometer, btnStart: Button) {
+        chronometer.base = SystemClock.elapsedRealtime()
+        chronometer.start()
+        btnStart.setText(R.string.btn_stop)
+        btnStart.setBackgroundColor(Color.RED)
+    }
 
-        var hourStopwatch = stopwatchNumbers.get(0)
-        var minStopwatch = stopwatchNumbers.get(1)
-        var secStopwatch = stopwatchNumbers.get(2)
+    fun stopChronometer(chronometer: Chronometer, btnStart: Button) {
+        chronometer.stop()
+        btnStart.visibility = View.GONE
+        findViewById<Button>(R.id.btn_restore).visibility = View.VISIBLE
+        findViewById<Button>(R.id.btn_resume).visibility = View.VISIBLE
+    }
 
-        var timer = Timer()
-
-        val task = object : TimerTask() {
-            override fun run() {
-
-            }
-        }
-
-        timer.scheduleAtFixedRate(task, 0, 1000)
-    }*/
+    fun startButton() {
+        findViewById<Button>(R.id.btn_restore).visibility = View.GONE
+        findViewById<Button>(R.id.btn_resume).visibility = View.GONE
+    }
 
 }

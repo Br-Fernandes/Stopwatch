@@ -2,8 +2,7 @@
     <string name="app_name">Stopwatch</string>
     <string name="stopwatch_numbers">00:00:00</string>
     <string name="btn_start">Start</string>
-    <string name="start">Start Timer</string>
-    <string name="stop">Stop Timer</string>
-    <string name="working">Started</string>
-    <string name="stopped">Stopped</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_restore">Restore</string>
+    <string name="btn_resume">Resume</string>
 </resources>

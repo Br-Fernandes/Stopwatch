@@ -19,19 +19,6 @@
         tools:ignore="MissingConstraints" />
 
 
-    <!--<TextView
-        android:id="@+id/tv_numbers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/stopwatch_numbers"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="87dp"
-        android:textSize="45sp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        tools:ignore="MissingConstraints" />-->
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,6 +37,30 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="161dp"
         tools:ignore="MissingConstraints">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btn_restore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_restore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btn_resume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/btn_resume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_start"
+        app:layout_constraintTop_toTopOf="parent">
 
     </Button>
 
