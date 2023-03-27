@@ -32,7 +32,7 @@ class ChronometerActivity : AppCompatActivity() {
         btnResume = findViewById<Button>(R.id.btn_resume)
         btnRestore = findViewById<Button>(R.id.btn_restore)
 
-        savedState = savedInstanceState // inicializar a variável savedState
+        savedState = savedInstanceState
 
         startButton()
 

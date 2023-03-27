@@ -29,7 +29,6 @@ class TimerActivity : AppCompatActivity() {
     lateinit var secondPicker: NumberPicker
     lateinit var btnStart: Button
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.timer)
