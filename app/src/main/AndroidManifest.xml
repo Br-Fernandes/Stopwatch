@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ChronometerActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".TimerActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

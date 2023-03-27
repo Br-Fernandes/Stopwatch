@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Stopwatch</string>
+    <string name="chronometer_title">Cronômetro</string>
+    <string name="timer_title">Temporizador</string>
     <string name="stopwatch_numbers">00:00:00</string>
-    <string name="btn_start">Start</string>
-    <string name="btn_stop">Stop</string>
-    <string name="btn_restore">Restore</string>
-    <string name="btn_resume">Resume</string>
+    <string name="btn_start">Iniciar</string>
+    <string name="btn_stop">Parar</string>
+    <string name="btn_restore">Restaurar</string>
+    <string name="btn_resume">Retomar</string>
 </resources>
